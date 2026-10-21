@@ -1,0 +1,17 @@
+{
+  "name": "Online Complaint Registration System (GrievanceHub)",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "forwardPorts": [5000, 5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "GrievanceHub Web Portal",
+      "onAutoForward": "openBrowser"
+    },
+    "5000": {
+      "label": "Express API Server",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "npm run install-all && npm run seed",
+  "postStartCommand": "npm run dev"
+}

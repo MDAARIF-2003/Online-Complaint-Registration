@@ -1,0 +1,19 @@
+{
+  "name": "online-complaint-system",
+  "version": "1.0.0",
+  "description": "Full-Stack MERN Online Complaint Registration and Management System",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "seed": "cd server && npm run seed",
+    "test:server": "cd server && npm test",
+    "test": "npm run test:server",
+    "build:client": "cd client && npm run build",
+    "build": "npm run build:client",
+    "start:server": "cd server && npm start",
+    "start:client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
