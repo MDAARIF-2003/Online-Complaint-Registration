@@ -1,9 +1,13 @@
 const Complaint = require('../models/Complaint');
 const User = require('../models/User');
+const Category = require('../models/Category');
 const Notification = require('../models/Notification');
 const generateComplaintNumber = require('../utils/generateComplaintNumber');
 const { emitNotification, emitComplaintStatusUpdate } = require('../utils/socket');
 const { recordAudit } = require('../utils/audit');
+
+// Helper to escape regex metacharacters in search queries
+const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 // @desc    Submit a new complaint
 // @route   POST /api/complaints
@@ -16,6 +20,15 @@ exports.createComplaint = async (req, res, next) => {
       return res.status(400).json({
         success: false,
         message: 'Please provide complaint title, description, and category.',
+      });
+    }
+
+    // Validate category exists and is active in system
+    const activeCategory = await Category.findOne({ name: category.trim(), isActive: true });
+    if (!activeCategory) {
+      return res.status(400).json({
+        success: false,
+        message: 'The selected category is invalid or currently inactive.',
       });
     }
 
@@ -113,9 +126,10 @@ exports.getComplaints = async (req, res, next) => {
       query.category = category;
     }
 
-    // Search by title or complaintNumber
+    // Search by title or complaintNumber (sanitizing regex metacharacters)
     if (search && search.trim()) {
-      const searchRegex = new RegExp(search.trim(), 'i');
+      const sanitized = escapeRegex(search.trim());
+      const searchRegex = new RegExp(sanitized, 'i');
       query.$or = [{ title: searchRegex }, { complaintNumber: searchRegex }];
     }
 
@@ -263,6 +277,7 @@ exports.reopenComplaint = async (req, res, next) => {
     const previousStatus = complaint.status;
     complaint.status = 'Reopened';
     complaint.reopenReason = reason.trim();
+    complaint.resolvedAt = null; // Clear resolvedAt timestamp upon reopening
 
     complaint.history.push({
       previousStatus,

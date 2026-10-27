@@ -11,7 +11,7 @@ exports.submitFeedback = async (req, res, next) => {
     const { rating, comments } = req.body;
 
     const numRating = Number(rating);
-    if (!numRating || numRating < 1 || numRating > 5) {
+    if (!numRating || !Number.isInteger(numRating) || numRating < 1 || numRating > 5) {
       return res.status(400).json({
         success: false,
         message: 'Rating must be an integer between 1 and 5 stars.',

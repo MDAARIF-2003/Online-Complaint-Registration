@@ -91,6 +91,14 @@ exports.sendMessage = async (req, res, next) => {
       });
     }
 
+    // Business rule & security check: Closed complaints cannot receive new messages
+    if (complaint.status === 'Closed') {
+      return res.status(400).json({
+        success: false,
+        message: 'Cannot send messages on a closed complaint. Thread is archived.',
+      });
+    }
+
     const newMessage = await Message.create({
       complaint: complaint._id,
       sender: req.user._id,

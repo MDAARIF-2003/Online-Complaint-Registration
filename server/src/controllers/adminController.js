@@ -7,6 +7,9 @@ const AuditLog = require('../models/AuditLog');
 const { emitNotification, emitComplaintStatusUpdate } = require('../utils/socket');
 const { recordAudit } = require('../utils/audit');
 
+// Helper to escape regex metacharacters in search queries
+const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 // @desc    Get comprehensive admin dashboard analytics
 // @route   GET /api/admin/dashboard
 // @access  Private (ADMIN)
@@ -139,7 +142,8 @@ exports.getUsers = async (req, res, next) => {
     if (role && role !== 'ALL') query.role = role;
     if (status && status !== 'ALL') query.status = status;
     if (search && search.trim()) {
-      const regex = new RegExp(search.trim(), 'i');
+      const sanitized = escapeRegex(search.trim());
+      const regex = new RegExp(sanitized, 'i');
       query.$or = [{ name: regex }, { email: regex }, { phone: regex }];
     }
 
@@ -220,6 +224,13 @@ exports.assignComplaint = async (req, res, next) => {
       return res.status(404).json({
         success: false,
         message: 'Complaint not found.',
+      });
+    }
+
+    if (complaint.status === 'Closed') {
+      return res.status(400).json({
+        success: false,
+        message: 'Cannot assign agents to a closed complaint.',
       });
     }
 

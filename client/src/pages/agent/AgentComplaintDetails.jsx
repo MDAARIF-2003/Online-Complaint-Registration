@@ -176,7 +176,7 @@ export const AgentComplaintDetails = () => {
     );
   }
 
-  const canStart = complaint.status === 'Assigned';
+  const canStart = ['Assigned', 'Reopened'].includes(complaint.status);
   const canResolve = ['In Progress', 'Reopened'].includes(complaint.status);
 
   return (
@@ -327,7 +327,7 @@ export const AgentComplaintDetails = () => {
                   <div className="d-flex align-items-center justify-content-between">
                     <div>
                       <p className="small text-dark fw-medium mb-0">Ready to begin diagnostic or on-site work?</p>
-                      <small className="text-muted">Transition status from Assigned to In Progress</small>
+                      <small className="text-muted">{complaint.status === 'Reopened' ? 'Resume work and move status to In Progress' : 'Transition status from Assigned to In Progress'}</small>
                     </div>
                     <button
                       className="btn btn-primary rounded-pill px-4 shadow-sm"

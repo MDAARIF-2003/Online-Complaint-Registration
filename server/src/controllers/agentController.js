@@ -2,6 +2,9 @@ const Complaint = require('../models/Complaint');
 const Notification = require('../models/Notification');
 const { emitNotification, emitComplaintStatusUpdate } = require('../utils/socket');
 
+// Helper to escape regex metacharacters in search queries
+const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 // @desc    Get all complaints assigned to logged in agent
 // @route   GET /api/agent/complaints
 // @access  Private (AGENT)
@@ -19,7 +22,8 @@ exports.getAssignedComplaints = async (req, res, next) => {
     }
 
     if (search && search.trim()) {
-      const searchRegex = new RegExp(search.trim(), 'i');
+      const sanitized = escapeRegex(search.trim());
+      const searchRegex = new RegExp(sanitized, 'i');
       query.$or = [{ title: searchRegex }, { complaintNumber: searchRegex }];
     }
 
