@@ -37,3 +37,8 @@ pnpm-debug.log*
 Thumbs.db
 ~$*
 *.tmp
+
+# Large video assets (distributed via GitHub Releases)
+Demo Video/
+*.mp4
+

@@ -18,6 +18,7 @@ Connects **Citizens/Students**, **Department Support Agents**, and **System Admi
 [🚀 Quick Start](#-quick-start--setup-guide) •
 [👥 Demo Accounts](#-pre-configured-demo-accounts) •
 [📸 Live Screenshots](#-system-interface-showcase) •
+[🎥 Video Walkthroughs](#-demo--code-walkthrough-videos) •
 [📊 Architecture](#-system-architecture) •
 [📑 Project Documentation](#-academic-documentation--reports) •
 [📡 API Reference](#-rest-api-documentation)
@@ -99,6 +100,20 @@ Connects **Citizens/Students**, **Department Support Agents**, and **System Admi
 <img src="documentation_assets/screenshots/21_mobile_responsive.png" alt="Mobile Responsive View" width="400" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
 
 </div>
+
+---
+
+## 🎥 Demo & Code Walkthrough Videos
+
+Comprehensive high-definition recordings of the system functionality, user workflows, and source code architecture are available as downloadable releases:
+
+| Video Title | File Size | Description | Download / Watch |
+| :--- | :---: | :--- | :--- |
+| **System Demo & Live Walkthrough** | `502 MB` | End-to-end demonstration of user registration, grievance filing, agent assignment, state transitions, live chat, and admin analytics. | [📥 Download Demo (`Demo Online Complaint Registration.mp4`)](https://github.com/MDAARIF-2003/Online-Complaint-Registration/releases/download/v1.0.0-demo/Demo.Online.Complaint.Registration.mp4) |
+| **Backend Codebase Walkthrough** | `239 MB` | Guided architecture walkthrough of Express controllers, Mongoose schemas, JWT middleware, WebSocket handlers, and seed scripts. | [📥 Download Backend Walkthrough (`Backend.mp4`)](https://github.com/MDAARIF-2003/Online-Complaint-Registration/releases/download/v1.0.0-demo/Backend.mp4) |
+| **Frontend Codebase Walkthrough** | `453 MB` | Guided architecture walkthrough of React pages, Tailwind components, state management contexts, API services, and responsive UI layouts. | [📥 Download Frontend Walkthrough (`Frontend.mp4`)](https://github.com/MDAARIF-2003/Online-Complaint-Registration/releases/download/v1.0.0-demo/Frontend.mp4) |
+
+> 💡 *Note: All videos are permanently hosted as release assets under GitHub Release [v1.0.0-demo](https://github.com/MDAARIF-2003/Online-Complaint-Registration/releases/tag/v1.0.0-demo) for high-definition streaming and fast downloads without repository cloning overhead.*
 
 ---
 
