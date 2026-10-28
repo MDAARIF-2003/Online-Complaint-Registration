@@ -8,6 +8,7 @@
 [![Node.js](https://img.shields.io/badge/Backend-Node.js_Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Socket.IO](https://img.shields.io/badge/RealTime-Socket.IO_WebSockets-010101?style=for-the-badge&logo=socket.io&logoColor=white)](https://socket.io/)
 [![Tests](https://img.shields.io/badge/Tests-37%2F37_Passed_(100%25)-brightgreen?style=for-the-badge&logo=jest&logoColor=white)](https://github.com/MDAARIF-2003/Online-Complaint-Registration)
+[![Google Drive](https://img.shields.io/badge/Google%20Drive-Docs%20%26%20Demo%20Videos-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/1jERMEGYjqmVyDHKZ71rKk3lFKDH_hAet?usp=drive_link)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 <br/>
@@ -19,6 +20,7 @@ Connects **Citizens/Students**, **Department Support Agents**, and **System Admi
 [👥 Demo Accounts](#-pre-configured-demo-accounts) •
 [📸 Live Screenshots](#-system-interface-showcase) •
 [🎥 Video Walkthroughs](#-demo--code-walkthrough-videos) •
+[📁 Drive Assets](https://drive.google.com/drive/folders/1jERMEGYjqmVyDHKZ71rKk3lFKDH_hAet?usp=drive_link) •
 [📊 Architecture](#-system-architecture) •
 [📑 Project Documentation](#-academic-documentation--reports) •
 [📡 API Reference](#-rest-api-documentation)
@@ -105,15 +107,21 @@ Connects **Citizens/Students**, **Department Support Agents**, and **System Admi
 
 ## 🎥 Demo & Code Walkthrough Videos
 
-Comprehensive high-definition recordings of the system functionality, user workflows, and source code architecture are available as downloadable releases:
+Comprehensive recordings demonstrating system functionality, user workflows, and source code architecture are hosted on Google Drive:
 
-| Video Title | File Size | Description | Download / Watch |
-| :--- | :---: | :--- | :--- |
-| **System Demo & Live Walkthrough** | `502 MB` | End-to-end demonstration of user registration, grievance filing, agent assignment, state transitions, live chat, and admin analytics. | [📥 Download Demo (`Demo Online Complaint Registration.mp4`)](https://github.com/MDAARIF-2003/Online-Complaint-Registration/releases/download/v1.0.0-demo/Demo.Online.Complaint.Registration.mp4) |
-| **Backend Codebase Walkthrough** | `239 MB` | Guided architecture walkthrough of Express controllers, Mongoose schemas, JWT middleware, WebSocket handlers, and seed scripts. | [📥 Download Backend Walkthrough (`Backend.mp4`)](https://github.com/MDAARIF-2003/Online-Complaint-Registration/releases/download/v1.0.0-demo/Backend.mp4) |
-| **Frontend Codebase Walkthrough** | `453 MB` | Guided architecture walkthrough of React pages, Tailwind components, state management contexts, API services, and responsive UI layouts. | [📥 Download Frontend Walkthrough (`Frontend.mp4`)](https://github.com/MDAARIF-2003/Online-Complaint-Registration/releases/download/v1.0.0-demo/Frontend.mp4) |
+<div align="center">
 
-> 💡 *Note: All videos are permanently hosted as release assets under GitHub Release [v1.0.0-demo](https://github.com/MDAARIF-2003/Online-Complaint-Registration/releases/tag/v1.0.0-demo) for high-definition streaming and fast downloads without repository cloning overhead.*
+[![Access on Google Drive](https://img.shields.io/badge/Google%20Drive-Access%20All%20Demo%20Videos-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/1jERMEGYjqmVyDHKZ71rKk3lFKDH_hAet?usp=drive_link)
+
+</div>
+
+| Video Title | File Size | Description | Google Drive Direct Access |
+| :--- | :---: | :--- | :---: |
+| **System Demo & Live Walkthrough** | `62 MB` | End-to-end demonstration of citizen registration, grievance filing, agent assignment, state transitions, live chat, and admin analytics. | [🎬 Watch / Download (`Demo Online Complaint Registration.mp4`)](https://drive.google.com/drive/folders/1jERMEGYjqmVyDHKZ71rKk3lFKDH_hAet?usp=drive_link) |
+| **Backend Codebase Walkthrough** | `94 MB` | Guided architecture walkthrough of Express controllers, Mongoose schemas, JWT middleware, WebSocket handlers, and seed scripts. | [🎬 Watch / Download (`Backend.mp4`)](https://drive.google.com/drive/folders/1jERMEGYjqmVyDHKZ71rKk3lFKDH_hAet?usp=drive_link) |
+| **Frontend Codebase Walkthrough** | `191 MB` | Guided architecture walkthrough of React pages, Tailwind components, state management contexts, API services, and responsive UI layouts. | [🎬 Watch / Download (`Frontend.mp4`)](https://drive.google.com/drive/folders/1jERMEGYjqmVyDHKZ71rKk3lFKDH_hAet?usp=drive_link) |
+
+> 📁 **Direct Cloud Drive Link:** [Google Drive Shared Folder (Complete Documentation & Demo Videos)](https://drive.google.com/drive/folders/1jERMEGYjqmVyDHKZ71rKk3lFKDH_hAet?usp=drive_link)
 
 ---
 
@@ -296,6 +304,7 @@ Documentation/
     └── Online_Complaint_Registration_Report.docx # Complete 21-Page Capstone Report
 ```
 
+- **Google Drive Documentation & Videos:** [Shared Drive Folder (Full Academic Docs & Video Walkthroughs)](https://drive.google.com/drive/folders/1jERMEGYjqmVyDHKZ71rKk3lFKDH_hAet?usp=drive_link)
 - **Complete Evidence Archive:** [`documentation_assets.zip`](documentation_assets.zip) (Contains all 21 raw PNG screenshots, system audit report, and diagram sources).
 
 ---
