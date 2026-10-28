@@ -163,6 +163,18 @@ D:\Online Complaint\
 │   └── test/
 │       ├── run-tests.js                 # 20+ automated backend integration test cases
 │       └── qa-defect-hunt.js            # 11-probe regression test verifying bug resolutions
+├── Demo Video/                            # Walkthrough & demonstration video recordings
+│   ├── README.md                          # Video index, descriptions & Google Drive access links
+│   ├── Demo Online Complaint Registration.mp4 # [62 MB] Live running application demonstration
+│   ├── Backend.mp4                        # [94 MB] Backend architecture & source code walkthrough
+│   └── Frontend.mp4                       # [191 MB] Frontend components & client code walkthrough
+├── Documentation/                         # Academic documentation & capstone deliverables
+│   ├── 1. Requirement Analysis/           # DFDs, user stories, solution requirements
+│   ├── 2. Brainstorming and Ideation/     # Empathy map, problem statements
+│   ├── 3. Project Planning/               # Project schedule & resource plan
+│   ├── 4. Project Design/                 # Architecture & problem-solution fit
+│   ├── 5. Project Development/            # UAT execution document & bug register
+│   └── 6. Project Report/                 # Complete 21-page B.Tech Capstone Project Report
 ├── documentation_assets/                 # Audit documentation, diagrams & evidence package
 │   ├── PROJECT_AUDIT_REPORT.md          # Comprehensive technical report (this document)
 │   ├── SCREENSHOT_MANIFEST.md           # Catalog of all 21 verified screenshots

@@ -20,6 +20,7 @@ Connects **Citizens/Students**, **Department Support Agents**, and **System Admi
 [👥 Demo Accounts](#-pre-configured-demo-accounts) •
 [📸 Live Screenshots](#-system-interface-showcase) •
 [🎥 Video Walkthroughs](#-demo--code-walkthrough-videos) •
+[📁 Codebase Structure](#-project-directory--codebase-structure) •
 [📁 Drive Assets](https://drive.google.com/drive/folders/1jERMEGYjqmVyDHKZ71rKk3lFKDH_hAet?usp=drive_link) •
 [📊 Architecture](#-system-architecture) •
 [📑 Project Documentation](#-academic-documentation--reports) •
@@ -172,6 +173,89 @@ flowchart TD
 
     AxiosClient -->|"REST APIs (JSON / HTTPS)"| App
     SocketContext <-->|"Bidirectional Events"| SocketServer
+```
+
+---
+
+## 📁 Project Directory & Codebase Structure
+
+Below is the complete organization of the repository, mapping code files, architecture tiers, demonstration assets, and documentation:
+
+```text
+Online-Complaint-Registration/
+├── 📁 client/                                # Frontend Presentation Tier (React 18 + Vite)
+│   ├── 📁 src/
+│   │   ├── 📁 api/                           # Axios HTTP client & token interceptors
+│   │   │   └── axiosClient.js
+│   │   ├── 📁 components/                    # Modular Reusable UI Components
+│   │   │   ├── 📁 chat/ChatWindow.jsx        # Real-time WebSocket complaint chat thread
+│   │   │   ├── 📁 common/Navbar.jsx          # Role-based navigation header
+│   │   │   ├── 📁 common/NotificationDropdown.jsx # Real-time notification bell
+│   │   │   ├── 📁 common/ProtectedRoute.jsx  # Role-based route guard
+│   │   │   └── 📁 complaints/                # Filter bars, status badges, timelines
+│   │   ├── 📁 context/                       # Global State Management
+│   │   │   ├── AuthContext.jsx               # JWT session state, login/logout
+│   │   │   └── SocketContext.jsx             # WebSocket client connection state
+│   │   ├── 📁 pages/                         # Application Views & Pages
+│   │   │   ├── 📁 admin/                     # AdminDashboard, Complaints, User/Agent Management
+│   │   │   ├── 📁 agent/                     # AgentDashboard, AgentComplaints, Remedial Controls
+│   │   │   ├── 📁 auth/                      # LoginPage, RegisterPage
+│   │   │   └── 📁 user/                      # UserDashboard, CreateComplaint, MyComplaints
+│   │   ├── App.jsx                           # Master Client Router (17 routes)
+│   │   └── main.jsx                          # ReactDOM client bootstrap
+│   └── vite.config.js                        # Vite bundler build configuration
+│
+├── 📁 server/                                # Application & Persistence Tier (Node.js + Express)
+│   ├── 📁 src/
+│   │   ├── 📁 config/db.js                   # Mongoose connection & persistent fallback
+│   │   ├── 📁 controllers/                   # Business Logic & Request Handlers
+│   │   │   ├── authController.js             # User registration, bcrypt authentication, JWT
+│   │   │   ├── complaintController.js        # Grievance filing, status transitions, reopen
+│   │   │   ├── agentController.js            # Department queues, remedial notes
+│   │   │   ├── adminController.js            # User provisioning, assignments, category toggle
+│   │   │   ├── messageController.js          # Chat message dispatch & history
+│   │   │   └── feedbackController.js         # Post-resolution citizen ratings & reviews
+│   │   ├── 📁 middleware/                    # Security & Verification Interceptors
+│   │   │   ├── authenticate.js               # JWT verification & cookie parsing
+│   │   │   ├── authorize.js                  # Role-based access control (RBAC)
+│   │   │   ├── rateLimiter.js                # DDoS & brute-force protection
+│   │   │   └── upload.js                     # Multer 5MB file upload validation
+│   │   ├── 📁 models/                        # Database Schemas & Collections (MongoDB)
+│   │   │   ├── Complaint.js                  # Core grievance schema, statuses, history timeline
+│   │   │   ├── User.js                       # User credentials, roles (USER, AGENT, ADMIN)
+│   │   │   ├── Message.js                    # Complaint discussion thread messages
+│   │   │   ├── Notification.js               # Bell alerts & read flags
+│   │   │   ├── Category.js                   # Dynamic complaint categories
+│   │   │   ├── Feedback.js                   # 1–5 star ratings & citizen reviews
+│   │   │   └── AuditLog.js                   # Immutable administrative action log
+│   │   ├── 📁 utils/seed.js                  # Database seeder script with demo records
+│   │   ├── app.js                            # Express app configuration & middleware
+│   │   └── server.js                         # HTTP server bootstrap & Socket.IO initialization
+│   └── 📁 test/                              # Automated integration test suite (37/37 passed)
+│
+├── 📁 Demo Video/                            # Video Walkthroughs & Recorded Demonstrations
+│   ├── README.md                             # Video catalog, descriptions & Google Drive links
+│   ├── Demo Online Complaint Registration.mp4 # [62 MB] Live running application demo
+│   ├── Backend.mp4                           # [94 MB] Backend architecture & code walkthrough
+│   └── Frontend.mp4                          # [191 MB] Frontend components & UI code walkthrough
+│
+├── 📁 Documentation/                         # Comprehensive Academic Documents (Word / DFDs)
+│   ├── 📁 1. Requirement Analysis/           # DFDs, user stories, solution requirements
+│   ├── 📁 2. Brainstorming and Ideation/     # Empathy map, problem statements
+│   ├── 📁 3. Project Planning/               # Project schedule and resource plan
+│   ├── 📁 4. Project Design/                 # Solution architecture, problem-solution fit
+│   ├── 📁 5. Project Development/            # Formal UAT document & bug tracking register
+│   └── 📁 6. Project Report/                 # Complete 21-page B.Tech Capstone Project Report
+│
+├── 📁 documentation_assets/                  # Project Audit & Genuine Interface Screenshots
+│   ├── 📁 screenshots/                       # 21 captured high-resolution verification screenshots
+│   ├── PROJECT_AUDIT_REPORT.md               # Exhaustive source-code inspection & audit
+│   ├── SCREENSHOT_MANIFEST.md                # 21-screen audit manifest with role mappings
+│   ├── DIAGRAM_EVIDENCE.md                   # Mermaid state diagrams & DFD evidence
+│   └── documentation_assets.zip              # Bundled evaluation package
+│
+├── package.json                              # Workspace orchestration scripts
+└── README.md                                 # Main system documentation & quick start guide
 ```
 
 ---

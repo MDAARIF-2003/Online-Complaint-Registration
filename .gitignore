@@ -38,7 +38,8 @@ Thumbs.db
 ~$*
 *.tmp
 
-# Large video assets (distributed via GitHub Releases)
-Demo Video/
+# Large video assets (distributed via Google Drive)
 *.mp4
+Demo Video/*
+!Demo Video/README.md
 
